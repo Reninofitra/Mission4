@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>To-Do List App</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.30.1/moment.min.js"></script>
+</head>
+<body>
+ <div class="container">
+    <div class="profile-box">
+        <h3 class="">Profile</h3>
+            <div class="flex items-center justify-between mb-1 mt-1">
+                <div class="flex items-center">
+                    <img src="https://static.vecteezy.com/system/resources/thumbnails/005/544/718/small_2x/profile-icon-design-free-vector.jpg" class="profile-image">
+                    <div class="flex items-center justify-between flex-col">
+                        <p>Reni Dwi Nofitra</p>
+                        <p class="current-date" id="currentDate"></p>
+                    </div>
+                </div>
+                <p>No ID</p>
+            </div>
+    </div>
+    <div class="todo-app">
+        <div class="flex justify-between mb-1 items-center">
+            <div class="flex">
+                <h2 class="">To-Do List</h2>
+                <img width="30px" height="30px" src="image/17905016.gif">
+            </div>
+            <div class="flex">
+                <button id="showDone" onclick="showDoneData()" class="mr-1" type="button">Show Done</button>
+                <button id="showUndone" onclick="refreshData()" class="mr-1 hidden" type="button">Show Undone</button>
+                <button onclick="deletAll()" type="button">Delete All</button>
+            </div>
+        </div>
+        <div class="row mb-1">
+            <input type="text" id="input-box" placeholder="add your text" class="no-styling">
+            <div class="flex">
+                <input id="datePicker" type="datetime-local" id="datepicker-box" placeholder="" class="no-styling form-control">
+                <select id="priority" class="no-styling">
+                    <option value="#5cb85c">Low</option>
+                    <option value="#ffcc00">Medium</option>
+                    <option value="#cc3300">High</option>
+                </select>
+                <button onclick="addTask()">Add</button>
+            </div>
+        </div>
+        <ul id="list-container">
+        </ul>
+    </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
+
